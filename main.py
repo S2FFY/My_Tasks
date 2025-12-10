@@ -35,4 +35,5 @@ def main(page: ft.Page):
     page.padding=0
     page.add(sidebar)
 
+
 ft.app(target=main)
