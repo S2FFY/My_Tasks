@@ -5,49 +5,45 @@ def main(page: ft.Page):
     page.title = "My Tasks"
     page.theme_mode = ft.ThemeMode.DARK
 
-    def switch_theme(e):
-        if page.theme_mode == ft.ThemeMode.DARK:
-            page.theme_mode = ft.ThemeMode.LIGHT
-            sidebar.bgcolor = '#ffffff'
-            #sidebar_setings.bgcolor = '#ffffff'
-        else:
-            page.theme_mode = ft.ThemeMode.DARK
-            sidebar.bgcolor = '#000000'
-            #sidebar_setings.bgcolor = '#000000'
-        page.update()
 
-    def navigate(e):
-        print(index(e))
-
+    #кнопки менюшки
     sidebar = ft.Container(
         content=ft.Column(
             controls=[
-                ft.Column(  # верхнее меню
+                ft.Column(
                     controls=[
-                        ft.IconButton(ft.Icons.TASK_ALT, on_click=lambda e: navigate(0)),
-                        ft.IconButton(ft.Icons.LOOP, on_click=lambda e: navigate(1)),
-                        ft.IconButton(ft.Icons.GRID_VIEW, on_click=lambda e: navigate(2)),
-                        ft.IconButton(ft.Icons.TIMER, on_click=lambda e: navigate(3)),
-                        ft.IconButton(ft.Icons.SUNNY, on_click=switch_theme),
+                        ft.IconButton(ft.Icons.HEXAGON_OUTLINED, icon_size=35, icon_color='#ffffff'),
+                        ft.IconButton(ft.Icons.TASK_ALT, icon_size=35),
+                        ft.IconButton(ft.Icons.CALENDAR_MONTH, icon_size=35),
+                        ft.IconButton(ft.Icons.SMART_TOY, icon_size=35),
+                        ft.IconButton(ft.Icons.TRACK_CHANGES, icon_size=35),
+                        ft.IconButton(ft.Icons.TIMER, icon_size=35)
                     ],
-                    alignment=ft.MainAxisAlignment.START,
-                    spacing=0,
-                    expand=True
+                    expand=1
                 ),
+<<<<<<< HEAD
                 ft.IconButton(ft.Icons.SETTINGS, on_click=lambda e: navigate(4)),  # снизу
+=======
+                ft.IconButton(ft.Icons.SETTINGS, icon_size=35)
+>>>>>>> 0593bc834ad1f13f1489ac46ff72cdc247681a5c
             ],
-            expand=True,
+            spacing=5,
         ),
-        width=40,
+        width=50,
         bgcolor="#000000",
+        expand=1
     )
 
+<<<<<<< HEAD
     main_area = ft.Container(
         ft.TextButton(ft.CheckboxTheme('dsffg')),
         expand=True
+=======
+>>>>>>> 0593bc834ad1f13f1489ac46ff72cdc247681a5c
 
-    )
+
     page.padding=0
-    page.add(ft.Row([sidebar, main_area], expand=True))
+    page.add(sidebar)
+
 
 ft.app(target=main)
