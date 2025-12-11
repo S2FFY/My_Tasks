@@ -34,7 +34,7 @@ def main(page: ft.Page):
                     spacing=0,
                     expand=True
                 ),
-                ft.IconButton(ft.Icons.SETTINGS, on_click=lambda e: navigate(99)),  # снизу
+                ft.IconButton(ft.Icons.SETTINGS, on_click=lambda e: navigate(4)),  # снизу
             ],
             expand=True,
         ),
@@ -43,6 +43,7 @@ def main(page: ft.Page):
     )
 
     main_area = ft.Container(
+        ft.TextButton(ft.CheckboxTheme('dsffg')),
         expand=True
 
     )
